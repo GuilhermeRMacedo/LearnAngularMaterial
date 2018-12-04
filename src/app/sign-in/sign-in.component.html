@@ -1,0 +1,55 @@
+<form 
+  [formGroup]="signInForm"
+  #f="ngForm"
+  (ngSubmit)="onSubmit(f)">
+  <div class="container center">
+    <mat-form-field>
+      <input type="email"
+        #email
+        matInput 
+        placeholder="Your email"
+        required
+        formControlName="email">
+    </mat-form-field>
+    <mat-error *ngIf="signInForm.get('email').invalid && signInForm.get('email').touched">{{getErrorMessageEmail()}}</mat-error>
+  </div>
+  <div class="container center">
+    <mat-form-field>
+      <input type="password" 
+        matInput 
+        placeholder="Your password"
+        required
+        formControlName="password">
+    </mat-form-field>
+    <mat-error *ngIf="signInForm.get('password').invalid && signInForm.get('password').touched">{{getErrorMessagePassword()}}</mat-error>
+  </div>
+  <div class="container center">
+    <mat-form-field>
+      <input 
+        matInput 
+        [matDatepicker]="picker" 
+        placeholder="Choose a date"
+        required
+        formControlName="datePicker">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-error *ngIf="signInForm.get('datePicker').invalid && signInForm.get('datePicker').touched">{{getErrorMessageDatePicker()}}</mat-error>
+  </div>
+  <div class="container center">
+    <mat-checkbox>Agree with terms and conditions</mat-checkbox>
+  </div>
+  <div class="container center">
+    <button 
+      type="submit"
+      mat-button
+      [disabled]="f.invalid">Sign in</button>
+  </div>
+</form>
+
+<p>
+  Form Status: {{ f.status }}
+</p>
+<p>
+  Values: {{f.value | json}}
+</p>

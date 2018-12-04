@@ -1,0 +1,19 @@
+
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.center {
+    align-items: center;
+}
+
+button {
+    background-color: #1d58bd;
+    color: white;
+}
+
+mat-form-field {
+    width: 300px;
+}

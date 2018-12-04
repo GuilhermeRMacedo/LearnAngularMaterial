@@ -1,0 +1,39 @@
+<form 
+  [formGroup]="loginForm"
+  #f="ngForm"
+  (ngSubmit)="onSubmit(f)">
+  <div class="container center">
+    <mat-form-field>
+      <input type="email"
+        #email
+        matInput 
+        placeholder="Your email"
+        required
+        formControlName="email">
+    </mat-form-field>
+    <mat-error *ngIf="loginForm.get('email').invalid && loginForm.get('email').touched">{{getErrorMessageEmail()}}</mat-error>
+  </div>
+  <div class="container center">
+    <mat-form-field>
+      <input type="password" 
+        matInput 
+        placeholder="Your password"
+        required
+        formControlName="password">
+    </mat-form-field>
+    <mat-error *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">{{getErrorMessagePassword()}}</mat-error>
+  </div>
+  <div class="container center">
+    <button 
+      type="submit"
+      mat-button
+      [disabled]="f.invalid">Login</button>
+  </div>
+</form>
+
+<p>
+  Form Status: {{ f.status }}
+</p>
+<p>
+  Values: {{f.value | json}}
+</p>
