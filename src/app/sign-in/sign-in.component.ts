@@ -13,7 +13,8 @@ export class SignInComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [Validators.required]),
     datePicker: new FormControl('', [Validators.required]),
-  })
+    checkBox: new FormControl('', [Validators.required])
+  });
 
   onSubmit(f) {
     console.log(f);

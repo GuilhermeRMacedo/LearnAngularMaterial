@@ -1,4 +1,4 @@
-<form 
+<form
   [formGroup]="signInForm"
   #f="ngForm"
   (ngSubmit)="onSubmit(f)">
@@ -6,7 +6,7 @@
     <mat-form-field>
       <input type="email"
         #email
-        matInput 
+        matInput
         placeholder="Your email"
         required
         formControlName="email">
@@ -15,8 +15,8 @@
   </div>
   <div class="container center">
     <mat-form-field>
-      <input type="password" 
-        matInput 
+      <input type="password"
+        matInput
         placeholder="Your password"
         required
         formControlName="password">
@@ -25,9 +25,9 @@
   </div>
   <div class="container center">
     <mat-form-field>
-      <input 
-        matInput 
-        [matDatepicker]="picker" 
+      <input
+        matInput
+        [matDatepicker]="picker"
         placeholder="Choose a date"
         required
         formControlName="datePicker">
@@ -37,10 +37,12 @@
     <mat-error *ngIf="signInForm.get('datePicker').invalid && signInForm.get('datePicker').touched">{{getErrorMessageDatePicker()}}</mat-error>
   </div>
   <div class="container center">
-    <mat-checkbox>Agree with terms and conditions</mat-checkbox>
+    <mat-checkbox
+    required
+    formControlName="checkBox">Agree with terms and conditions</mat-checkbox>
   </div>
   <div class="container center">
-    <button 
+    <button
       type="submit"
       mat-button
       [disabled]="f.invalid">Sign in</button>
