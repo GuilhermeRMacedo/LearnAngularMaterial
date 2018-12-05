@@ -1,0 +1,22 @@
+<mat-toolbar color="#e8e8e8">
+    <div fxHide.gt-xs>
+      <button mat-icon-button (click)="openSideNav()">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </div>
+    <div>
+      <a routerLink="['/']" routerLinkActive="active">
+        <img
+          class="logo-img"
+          src="http://www.ivia.com.br/intranet/wp-content/uploads/2016/09/logo_ivia_intranet.png"
+        />
+      </a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+      <ul fxLayout fxLayoutGap="10px" class="navigation-items">
+        <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
+        <li><a routerLink="/signin" routerLinkActive="active">Sign-in</a></li>
+        <li><a routerLink="/training" routerLinkActive="active">Training</a></li>
+      </ul>
+    </div>
+  </mat-toolbar>

@@ -18,3 +18,8 @@ button {
 mat-form-field {
     width: 300px;
 }
+
+mat-card {
+  width: 500px;
+
+}

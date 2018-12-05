@@ -1,46 +1,9 @@
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav role="navigation">
-     Sidenav content
-     <mat-nav-list>
-        <mat-list-item>
-          <a routerLink="/login" routerLinkActive="active">Login</a>
-        </mat-list-item>
-        <mat-list-item>
-          <a routerLink="/signin" routerLinkActive="active">Sign in</a>
-        </mat-list-item>
-     </mat-nav-list>
+     <app-sidenav-list (clickInRoute)="sidenav.toggle()"></app-sidenav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="#e8e8e8">
-      <div fxHide.gt-xs>
-        <button mat-icon-button (click)="sidenav.toggle()">
-          <mat-icon>menu</mat-icon>
-        </button>
-      </div>
-      <div>
-        <a routerLink="['/']" routerLinkActive="active">
-          <img
-            class="logo-img"
-            src="http://www.ivia.com.br/intranet/wp-content/uploads/2016/09/logo_ivia_intranet.png"
-          />
-        </a>
-      </div>
-      <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="10px" class="navigation-items">
-          <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-          <li><a routerLink="/signin" routerLinkActive="active">Sign in</a></li>
-        </ul>
-      </div>
-    </mat-toolbar>
+    <app-header (OnSideNav)="sidenav.toggle()"></app-header>
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-<!--
-  <nav>
-      <a routerLink="/login" routerLinkActive="active">Login|</a>
-      <a routerLink="/signin" routerLinkActive="active">Sign in</a>
-  </nav>
--->
-
-<!-- <router-outlet></router-outlet> -->

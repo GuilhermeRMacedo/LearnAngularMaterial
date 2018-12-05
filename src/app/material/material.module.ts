@@ -7,9 +7,12 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import {MatSelectModule} from '@angular/material/select';
 
-import { MatFormFieldModule, MatInputModule } from '@angular/material'; //to inputs
-import { MatDatepickerModule } from '@angular/material/datepicker';     //to datepicker
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 
 @NgModule({
@@ -26,9 +29,12 @@ import { MatDatepickerModule } from '@angular/material/datepicker';     //to dat
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule
   ],
-  exports:[
+  exports: [
     BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
@@ -39,7 +45,10 @@ import { MatDatepickerModule } from '@angular/material/datepicker';     //to dat
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSelectModule
   ]
 })
 export class MaterialModule { }

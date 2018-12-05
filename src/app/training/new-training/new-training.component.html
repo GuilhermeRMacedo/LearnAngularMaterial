@@ -1,0 +1,20 @@
+<section class="new-training" fxLayout="row" fxLayoutAlign="center">
+  <mat-card class="card">
+    <mat-card-title>Time to start workout</mat-card-title>
+    <mat-card-content fxLayoutGap="10px">
+      <mat-form-field>
+        <mat-select placeholder="Type of sport">
+          <mat-option *ngFor="let sport of typeOfSports" [value]="sport.value">
+            {{ sport.name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Description">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button><mat-icon>add</mat-icon></button>
+    </mat-card-actions>
+  </mat-card>
+</section>
