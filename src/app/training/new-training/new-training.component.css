@@ -1,4 +1,8 @@
+.new-training {
+  padding: 30px;
+}
 
-.card {
-  width: 500px;
+button {
+  background-color: #1d58bd;
+  color: white;
 }

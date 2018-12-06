@@ -17,6 +17,8 @@ import { TrainingComponent } from './training/training.component';
 import { NewTrainingComponent } from './training/new-training/new-training.component';
 import { PastTrainingsComponent } from './training/past-trainings/past-trainings.component';
 import { CurrentTrainingComponent } from './training/current-training/current-training.component';
+import { StopTrainingComponent } from './training/current-training/stop-training.component';
+import { MatDialogModule } from '@angular/material';
 
 
 @NgModule({
@@ -30,16 +32,19 @@ import { CurrentTrainingComponent } from './training/current-training/current-tr
     TrainingComponent,
     NewTrainingComponent,
     PastTrainingsComponent,
-    CurrentTrainingComponent
+    CurrentTrainingComponent,
+    StopTrainingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [StopTrainingComponent]
 })
 export class AppModule { }
